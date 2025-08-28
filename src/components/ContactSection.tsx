@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -9,18 +10,38 @@ const ContactSection: React.FC = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', service: '', message: '' });
-    }, 3000);
+
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm(
+        'service_h4xm46m',   // replace with your EmailJS service ID
+        'template_9svj7v8',  // replace with your EmailJS template ID
+        formRef.current,
+        '0O8sj-YurBPmlShWy'    // replace with your EmailJS public key
+      )
+      .then(
+        () => {
+          setIsSubmitted(true);
+          setTimeout(() => {
+            setIsSubmitted(false);
+            setFormData({ name: '', email: '', service: '', message: '' });
+          }, 3000);
+        },
+        (error) => {
+          console.error('FAILED...', error.text);
+          alert('❌ Failed to send message, try again later.');
+        }
+      );
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -30,9 +51,13 @@ const ContactSection: React.FC = () => {
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-black to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Let's Build Something <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Amazing</span>
+            Let's Build Something{' '}
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Amazing
+            </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Ready to transform your ideas into reality? Get in touch with our team of experts.
@@ -40,11 +65,11 @@ const ContactSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
+          {/* Contact Info */}
           <div className="space-y-8">
+            {/* Phone */}
             <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
-              
               <div className="space-y-6">
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mr-4">
@@ -52,39 +77,41 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Phone</p>
-                    <a href="https://wa.me/923362159777" className="text-white hover:text-blue-400 transition-colors">
+                    <a
+                      href="https://wa.me/923362159777"
+                      className="text-white hover:text-blue-400 transition-colors"
+                    >
                       03362159777
                     </a>
                   </div>
                 </div>
-
+                {/* Email */}
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mr-4">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
-                    <a href="mailto:Musabkhan703@gmail.com" className="text-white hover:text-blue-400 transition-colors">
+                    <a
+                      href="mailto:Musabkhan703@gmail.com"
+                      className="text-white hover:text-blue-400 transition-colors"
+                    >
                       Musabkhan703@gmail.com
                     </a>
                   </div>
                 </div>
-
-            <div className="flex items-center">
-      {/* Icon Container */}
-      <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mr-4">
-        <MapPin className="w-6 h-6 text-white" />
-      </div>
-
-      {/* Location Text */}
-      <div>
-        <p className="text-gray-400 text-sm">Location</p>
-        <p className="text-white font-semibold">Karachi, Pakistan</p>
-      </div>
-    </div>
+                {/* Location */}
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mr-4">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-sm">Location</p>
+                    <p className="text-white font-semibold">Karachi, Pakistan</p>
+                  </div>
+                </div>
               </div>
             </div>
-
             {/* Business Hours */}
             <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-white mb-4">Business Hours</h3>
@@ -114,7 +141,7 @@ const ContactSection: React.FC = () => {
                 <p className="text-gray-300">We'll get back to you within 24 hours.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                     Full Name
@@ -157,7 +184,7 @@ const ContactSection: React.FC = () => {
                     value={formData.service}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-black/10 border border-white/20 rounded-lg text-gray focus:outline-none focus:border-blue-400 transition-colors"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-black focus:outline-none focus:border-blue-400 transition-colors"
                   >
                     <option value="">Select a service</option>
                     <option value="ai-ml">AI/ML</option>

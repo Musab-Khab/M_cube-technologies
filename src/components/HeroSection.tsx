@@ -101,7 +101,7 @@ const HeroSection: React.FC = () => {
         {/* Company Name */}
         <div className="text-center mb-6">
           <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4 tracking-wider">
-            M_Cube-Technologies
+            M 4-softwares
           </h1>
           <div className="h-1 w-32 mx-auto bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mb-6" />
           <p className="text-xl md:text-2xl text-gray-300 font-light tracking-wide">

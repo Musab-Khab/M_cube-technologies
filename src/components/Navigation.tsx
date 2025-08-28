@@ -32,7 +32,7 @@ const Navigation: React.FC = () => {
           className="w-10 h-10 object-cover rounded-full"
         />
         <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-          M cube
+          M4softwares
         </div>
       </div>
 

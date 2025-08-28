@@ -13,9 +13,9 @@ import {
 } from 'lucide-react';
 
 const stats = [
-  { number: '150+', label: 'Projects Completed', icon: CheckCircle },
-  { number: '50+', label: 'Happy Clients', icon: Heart },
-  { number: '5+', label: 'Years Experience', icon: Clock },
+  { number: '10+', label: 'Projects Completed', icon: CheckCircle },
+  { number: '9+', label: 'Happy Clients', icon: Heart },
+  { number: '3+', label: 'Years Experience', icon: Clock },
   { number: '98%', label: 'Success Rate', icon: TrendingUp }
 ];
 
@@ -41,32 +41,32 @@ const values = [
 ];
 
 const team = [
+ {
+  name: 'Muhammad Musab',
+  role: 'CEO & Founder',
+  expertise: 'MERN STACK, Project Manager',
+  image: '/2.jpg', // served from public/2.jpg
+  color: 'from-blue-500 to-purple-500'
+},
   {
-    name: 'Alex Chen',
-    role: 'CEO & Founder',
-    expertise: 'AI/ML, Strategy',
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
-    color: 'from-blue-500 to-purple-500'
-  },
-  {
-    name: 'Sarah Johnson',
-    role: 'CTO',
-    expertise: 'Full-Stack Development',
-    image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
+    name: 'Arsal Kamran',
+    role: 'CO-Founder',
+    expertise: 'AI/ML , WebDeveloper ',
+    image: '/coat .jpg',
     color: 'from-green-500 to-emerald-500'
   },
   {
-    name: 'Marcus Rodriguez',
+    name: 'Muhammad Ibrahim',
     role: 'Lead Designer',
     expertise: 'UI/UX, Branding',
-    image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '/1.PNG',
     color: 'from-pink-500 to-rose-500'
   },
   {
-    name: 'Emily Zhang',
+    name: 'Muhammad Khubaib',
     role: 'DevOps Engineer',
     expertise: 'Cloud, Security',
-    image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: '12.jpg',
     color: 'from-cyan-500 to-blue-500'
   }
 ];
@@ -79,7 +79,7 @@ const AboutSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">M cube</span>
+            About <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">M 4 Softwares</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             We are a forward-thinking technology agency dedicated to transforming businesses through innovative digital solutions.
@@ -112,7 +112,7 @@ const AboutSection: React.FC = () => {
             <Rocket className="w-16 h-16 text-blue-400 mx-auto mb-6" />
             <h3 className="text-3xl font-bold text-white mb-6">Our Mission</h3>
             <p className="text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto">
-              At M cube, we believe technology should empower businesses to reach their full potential. 
+              At M 4 Software, we believe technology should empower businesses to reach their full potential. 
               We combine cutting-edge innovation with proven execution strategies to deliver exceptional 
               results that drive growth and create lasting value for our clients.
             </p>
@@ -176,14 +176,14 @@ const AboutSection: React.FC = () => {
         <div className="mt-20 text-center">
           <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-lg border border-white/10 rounded-3xl p-8 md:p-12">
             <Shield className="w-16 h-16 text-blue-400 mx-auto mb-6" />
-            <h3 className="text-3xl font-bold text-white mb-6">Why Choose M cube?</h3>
+            <h3 className="text-3xl font-bold text-white mb-6">Why Choose M 4 softwares?</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
               <div className="space-y-4">
                 <div className="flex items-start">
                   <CheckCircle className="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-white font-semibold mb-1">Proven Track Record</h4>
-                    <p className="text-gray-300 text-sm">150+ successful projects across various industries</p>
+                    <p className="text-gray-300 text-sm">10+ successful projects across various industries</p>
                   </div>
                 </div>
                 <div className="flex items-start">

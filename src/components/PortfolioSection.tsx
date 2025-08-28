@@ -19,10 +19,10 @@ const categories = ['All', 'Web Development', 'Mobile Apps', 'AI/ML', 'UI/UX Des
 const projects = [
   {
     id: 1,
-    title: 'FinTech Dashboard',
+    title: 'KMC Karachi - Citizen Services Portal',
     category: 'Web Development',
-    description: 'Advanced financial analytics platform with real-time data visualization and AI-powered insights.',
-    image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Developed a full-stack MERN web application to digitize and streamline public service access and administrative workflows for the Karachi Metropolitan Corporation.',
+    image: '/14.jpg',
     technologies: ['React', 'Node.js', 'MongoDB', 'D3.js'],
     results: ['40% increase in user engagement', '60% faster data processing', '99.9% uptime'],
     icon: TrendingUp,
@@ -43,11 +43,11 @@ const projects = [
   },
   {
     id: 3,
-    title: 'E-commerce Platform',
+    title: ' ImmortalBoost - Professional Gaming Services Platform',
     category: 'Web Development',
-    description: 'Scalable multi-vendor marketplace with advanced search, AI recommendations, and payment processing.',
+    description: 'Designed and developed a modern, high-converting website for a professional gaming boost and coaching service. The platform was engineered to build trust, clearly communicate complex service tiers, and facilitate secure transactions for a global audience of gamers.',
     image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-    technologies: ['Next.js', 'PostgreSQL', 'Redis', 'AWS'],
+    technologies: [' HTML5, CSS3, JavaScript, React.js ,PHP'],
     results: ['300% increase in sales', '2M+ products listed', '99.95% payment success rate'],
     icon: Globe,
     color: 'from-purple-400 to-violet-500',
@@ -55,9 +55,9 @@ const projects = [
   },
   {
     id: 4,
-    title: 'AI Content Generator',
+    title: 'AI-Powered Conversational Chatbot',
     category: 'AI/ML',
-    description: 'GPT-powered content creation platform for marketing teams with brand voice customization.',
+    description: 'Designed and developed an intelligent chatbot using NLP to automate customer support, improve response time, and handle user queries efficiently..',
     image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
     technologies: ['Python', 'TensorFlow', 'OpenAI API', 'Docker'],
     results: ['80% time savings', '95% content approval rate', '500+ enterprise clients'],
@@ -67,23 +67,23 @@ const projects = [
   },
   {
     id: 5,
-    title: 'Cybersecurity Dashboard',
+    title: 'Cloud Infrastructure Automation',
     category: 'Cloud Solutions',
-    description: 'Real-time threat monitoring and incident response platform for enterprise security teams.',
+    description: 'Architected a secure, highly available web application on AWS with automated scaling and failover capabilities.',
     image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800',
-    technologies: ['Vue.js', 'Python', 'Elasticsearch', 'Kubernetes'],
-    results: ['99.9% threat detection', '70% faster response time', 'SOC 2 compliant'],
+    technologies: [' EC2, RDS, VPC, ELB, Auto Scaling, SNS, Route 53'],
+    results: ['99.9% threat detection', ' Zero-Downtime Deployments', 'Fully Automated Scaling'],
     icon: Shield,
     color: 'from-red-400 to-orange-500',
     featured: false
   },
   {
     id: 6,
-    title: 'Design System & Branding',
+    title: 'Cryptocurrency Analytics Dashboard',
     category: 'UI/UX Design',
-    description: 'Comprehensive design system and brand identity for a Fortune 500 technology company.',
+    description: 'Designed an intuitive dashboard for traders to monitor portfolio performance, track market trends, and execute trades seamlessly.',
     image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
-    technologies: ['Figma', 'Adobe Creative Suite', 'Storybook', 'Sass'],
+    technologies: ['Figma, User Flow Mapping, Component Libraries, Data Visualization, Sass'],
     results: ['50% faster design process', '90% design consistency', '25+ component library'],
     icon: Palette,
     color: 'from-pink-400 to-rose-500',
@@ -119,12 +119,12 @@ const PortfolioSection: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           <div className="text-center bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6">
             <Award className="w-8 h-8 text-yellow-400 mx-auto mb-3" />
-            <div className="text-2xl font-bold text-white">150+</div>
+            <div className="text-2xl font-bold text-white">10+</div>
             <div className="text-gray-400 text-sm">Projects Delivered</div>
           </div>
           <div className="text-center bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6">
             <Users className="w-8 h-8 text-blue-400 mx-auto mb-3" />
-            <div className="text-2xl font-bold text-white">50+</div>
+            <div className="text-2xl font-bold text-white">9+</div>
             <div className="text-gray-400 text-sm">Happy Clients</div>
           </div>
           <div className="text-center bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6">
