@@ -19,10 +19,10 @@ const ContactSection: React.FC = () => {
 
     emailjs
       .sendForm(
-        'service_h4xm46m',   // replace with your EmailJS service ID
-        'template_9svj7v8',  // replace with your EmailJS template ID
+        'service_blfei68',   // replace with your EmailJS service ID
+        'template_p4fz0ig',  // replace with your EmailJS template ID
         formRef.current,
-        '0O8sj-YurBPmlShWy'    // replace with your EmailJS public key
+        '4oQUpM5PYwpSKwseF'    // replace with your EmailJS public key
       )
       .then(
         () => {
@@ -93,10 +93,10 @@ const ContactSection: React.FC = () => {
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
                     <a
-                      href="mailto:Musabkhan703@gmail.com"
+                      href="mailto:musabkhan703@gmail.com"
                       className="text-white hover:text-blue-400 transition-colors"
                     >
-                      Musabkhan703@gmail.com
+                      tech@m4softwares.com
                     </a>
                   </div>
                 </div>

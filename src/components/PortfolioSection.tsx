@@ -36,7 +36,7 @@ const projects = [
     description: 'HIPAA-compliant telemedicine app connecting patients with healthcare providers seamlessly.',
     image: 'https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800',
     technologies: ['React Native', 'Firebase', 'WebRTC', 'Stripe'],
-    results: ['10K+ active users', '4.8/5 app store rating', '50% reduction in wait times'],
+    results: ['10K+ users can use', 'ready to go app ', '50% reduction in wait times'],
     icon: Smartphone,
     color: 'from-blue-400 to-cyan-500',
     featured: true

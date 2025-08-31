@@ -112,7 +112,7 @@ const AboutSection: React.FC = () => {
             <Rocket className="w-16 h-16 text-blue-400 mx-auto mb-6" />
             <h3 className="text-3xl font-bold text-white mb-6">Our Mission</h3>
             <p className="text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto">
-              At M 4 Software, we believe technology should empower businesses to reach their full potential. 
+              At M 4 Softwares, we believe technology should empower businesses to reach their full potential. 
               We combine cutting-edge innovation with proven execution strategies to deliver exceptional 
               results that drive growth and create lasting value for our clients.
             </p>
